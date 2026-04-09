@@ -1,0 +1,19 @@
+Fs = 8000;
+t= 0:(1/Fs):5;
+fa = 1000;
+fb = 2000;
+
+f = fa + t.*(fb - fa);
+
+x(n) = sin(2*pi*f*t);
+
+y = x(1:2:end);
+
+
+x(n)= [0,5];
+soundsc(x,8000)
+
+pause(5.5);
+
+spectogram(x,128,120,128,800,'yaxis');
+
