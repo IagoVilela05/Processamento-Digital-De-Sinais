@@ -1,1 +1,10 @@
 *.asv
+*.fig
+# LaTeX
+*.tex
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
