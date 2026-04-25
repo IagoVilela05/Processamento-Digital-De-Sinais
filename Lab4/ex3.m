@@ -1,0 +1,16 @@
+[sinal, fs] = audioread('romansaSmall.wav'); 
+N = length(sinal);
+X = fft(sinal); 
+half_m = 0:ceil(length(X)/2); 
+subplot(3, 1, 2); 
+stem(half_m * fs / length(X), abs(X(half_m + 1)), 'b'); 
+ylabel('Amplitude'); 
+xlabel('frequencia (Hz)'); 
+title('Amplitude da Resposta em Frequencia'); 
+subplot(3, 1, 3); 
+tolerancia = 0.00001; 
+X2 = ceil(abs(X) - tolerancia); 
+X3 = round(X2 ./ (X2 + 1)); 
+stem(half_m * fs / length(X), angle(X(half_m + 1)) .* X3(half_m + 1), 'b'); 
+ylabel('Fase (rad)');
+xlabel('frequencia (Hz)');
