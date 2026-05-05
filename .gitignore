@@ -8,3 +8,4 @@
 *.fdb_latexmk
 *.synctex.gz
 *.out
+figs/
